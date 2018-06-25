@@ -7,9 +7,11 @@ public class Permutation {
     String no = args[0];
     char[] arr = no.toCharArray();
     permutate(arr, 0, arr.length-1);
+    //sorting ArrayList
     Collections.sort(list);
     int check=0;
     
+    //clear the same element.
     while(check < list.size()-1){
         if(list.get(check).equals(list.get(check+1))){
             list.remove(check);
@@ -19,17 +21,12 @@ public class Permutation {
         }
     }
     
-    int checka = 0;
-    while(checka < list.size()){
-        if(list.get(checka).charAt(0) == '0') {
-            list.remove(checka);
-        }
-        else checka++;
+    for(int i=0; i<list.size(); i++){
+        System.out.println(list.get(i));   
     }
-    System.out.println(list.size());
   }
   
-  
+    //permutate group of char
   public static void permutate(char[] arr, int l, int r){
     if(l == r){
       String result = new String();
@@ -46,6 +43,7 @@ public class Permutation {
     }
   }
   
+    //swap 2 char arrays
   public static void swap(char[] arr,int a,int b){
     char temp = arr[a];
     arr[a] = arr[b];
